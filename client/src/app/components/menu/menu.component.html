@@ -1,0 +1,11 @@
+<div style="font-size:20px;background: #fff;border-bottom: 1px solid black;height: 136px;" class="div1"  >
+    <br>
+    <div>
+    <img  src="assets/smmm.png" style="height:75px;" />
+    <a style="margin-left:680px" routerLink="/landing" routerLinkActive="active">Home</a>
+    <a style="margin-left: 50px;" routerLink="/about" routerLinkActive="active">About Us</a>
+    <a style="margin-left: 50px;" routerLink="/cart" routerLinkActive="active">Cart</a>
+    <a style="margin-left: 50px;" routerLink="/login" routerLinkActive="active" *ngIf="hide()">Login/Sign Up</a>
+    <a style="margin-left: 50px;" routerLinkActive="active" *ngIf="hide2()" [routerLink]="['ui',id]">Access Your Account</a>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div>
+        <h1 mat-dialog-title style="text-align: center;">MODIFY AN INSTRUCTOR</h1>
+        <br><br>
+        <div mat-dialog-content >
+        <form [formGroup]="fomateurForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input formControlName="name" matInput placeholder="...">
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline">
+                <mat-label>Sur Name</mat-label>
+                <input formControlName="surName" matInput placeholder="...">
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline">
+                <mat-label>Age</mat-label>
+                <input formControlName="age" matInput placeholder="...">
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline">
+                <mat-label>Address</mat-label>
+                <input formControlName="adr" matInput placeholder="...">
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline">
+                <mat-label>Mail</mat-label>
+                <input formControlName="mail" matInput placeholder="...">
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline">
+                <mat-label>Phone Number</mat-label>
+                <input formControlName="phoneNum" matInput placeholder="...">
+            </mat-form-field>
+            <br>
+        </form>
+        <div mat-dialog-actions [align]="'end'">
+            <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+            <button mat-raised-button color="primary" (click)="addFormateur()">ADD</button>
+        </div>
+        </div>
+        </div>

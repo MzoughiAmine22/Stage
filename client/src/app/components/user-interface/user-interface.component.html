@@ -1,0 +1,40 @@
+<div>
+    <mat-toolbar style="background: #2f3d4a;color:white">
+        <mat-toolbar-row>
+            <button (click)="sidenav.toggle();" mat-icon-button >
+                <mat-icon >menu</mat-icon>
+            </button>
+            <h1>User Interface</h1>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-sidenav-container >
+        <mat-sidenav #sidenav opened="true" mode="side" style="width: 200px;">
+            <mat-nav-list>
+                <a mat-list-item routerLink="/landing" ><mat-icon>home</mat-icon>&nbsp; Return Home </a>
+                <a mat-list-item (click)="logoutuser()" ><mat-icon>remove_circle</mat-icon> &nbsp; Log Out</a>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div style="height: 850px;margin-top: 20px;margin-left: 25px; text-align: center;" >
+                <div class="container" style="border:1px solid #2f3d4a;" >
+                    <br>
+                    <div class="form-group">
+                        Full Name : <br><br><input type="text" class="form-control" [value]="creds[0].fullname" readonly />
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        Age :<br><br>
+                        <input type="text" class="form-control" [value]="creds[0].age" readonly />
+                    </div>
+                    <br>
+                        Email :<br><br>
+                    <div class="form-group">
+                        <input type="text" class="form-control" [value]="creds[0].mail" readonly />
+                    </div>
+                    <br>
+                    </div>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+    </div>
+    

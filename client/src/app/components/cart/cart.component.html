@@ -1,0 +1,57 @@
+
+<body>
+    <br><br>
+    <ng-container *ngIf="formations?.length !=0" >
+        <br>
+        <div class="container">
+            <div class="card-table" >
+            <div  style="border-radius: 5px ;">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>C.No</th>
+                            <th>Course Name</th>
+                            <th>Course Date</th>
+                            <th>Course Duration</th>
+                            <th>Course price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of formations;index as i" >
+                            <td>{{i+1}}</td>
+                            <td>{{p.name}}</td>
+                            <td>{{p.date| date}}</td>
+                            <td>{{p.duration}}</td>
+                            <td>{{p.duration*50}} TND</td>
+                            <td>
+                                <button (click)="removeItem(p)" mat-raised-button color="warn"  ><span class="material-symbols-outlined">delete</span></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            <br>
+            <span  style="position: relative;top:6px;color:#f4511e" class="material-symbols-outlined">apps</span><span style="margin-left:10px ;color:black" >Total <span style="color: #f4511e;">:</span> {{grandTotal}} TND</span>
+            <span style="position: relative;margin-left: 420px;margin-top: 5px; color:black"><button (click)="checkout()" color="success" mat-raised-button><mat-icon style="position: relative;" >account_balance_wallet</mat-icon>&nbsp;Check Out</button></span>
+            <button (click)="emptycart()" style="position: relative;left:520px" color="warn" mat-raised-button ><span style="position: relative;top:-2px;right:5px;" class="material-symbols-outlined">delete_forever</span>Clear Cart</button>
+            <br>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="formations?.length==0" >
+    <br>
+    <div class="container">
+        <mat-card class="car" style="background:#ea5357;color: white;position: relative;bottom: 10px;">
+            <div class="cent">
+            <img src="assets/cc.png" width="100px" height="100px" style="position: relative;top:-15px;right:6px" />
+            <br>
+            <h3>Your cart is empty !</h3>
+                <h4>Fill it Up !</h4>
+                &nbsp;<button mat-raised-button color="primary" routerLink="/landing">Shop Now</button>
+            </div>
+        </mat-card>
+    </div>
+    </ng-container>
+    
+</body>

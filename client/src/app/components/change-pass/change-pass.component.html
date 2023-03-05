@@ -1,0 +1,15 @@
+
+<div class="login-page">
+    <div class="form">
+        <h2 style="color: #2f3d4a;">Change Admin Password</h2>
+        <br>
+      <form [formGroup]="form" class="login-form" >
+        <input type="password" formControlName="oldpass" placeholder="old password"/>
+        <br><br>
+        <input type="password" formControlName="newpass" placeholder="new password"/>
+        <br><br>
+        <button  (click)="changePass()">change</button>
+        <br><br>
+      </form>
+    </div>
+  </div>

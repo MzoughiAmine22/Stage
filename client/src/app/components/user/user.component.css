@@ -1,0 +1,10 @@
+.mat-warn{background: #ea5357;}
+.sea
+{
+    position: absolute;z-index: 10;
+    right: 67%;
+    color:#ea5357;
+    top: 700px;
+}
+
+.form-control{border-radius: 3px;width:400px;height:50px}

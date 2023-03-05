@@ -1,0 +1,35 @@
+<div  >
+    <div style="background-image: url('assets/back.png');background-size: 1600px 700px;height: 510px;border:1px solid rgb(84, 99, 108) ">
+    <div style="color: #fff;font-size: 40px;margin-left: 15%;" >
+        <br><br><br>
+        CERTIFICATIONS<br><br>
+
+    Enjoy the summer and become certified <img style="position: relative;bottom: 75px;left:80px" width="400px" src="assets/o.png" />
+    <br><br>
+    </div>
+    <div style="color: #fff;position: relative;margin-left: 41%;">
+        <button style="color: #fff; padding: 20px;" class="rounded-pill bg-dark" (click)="pageUp()" >Browse Our Courses Below</button>
+    </div>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+        <div class="form-group">
+            <input type="text" class="form-control"  placeholder="search a course..." [(ngModel)]="searchTerm" (keyup)="search($event)" /><mat-icon class="sea">search</mat-icon>
+        </div>
+        <br><br>
+    <div class="row">
+    <div *ngFor="let f of formations | filter:searchKey:'name'" class="col-3 ho">
+        <div style="border: 0.1px solid ;text-align: center;border-radius: 5px;" >
+            <mat-card style="border-radius: 5px;color:#fff;background-color: rgb(84, 99, 108);background: url('assets/ba.png');">
+                    <mat-card-title style="text-align:center;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 20;height: 50px;"><br>{{f.name}}</mat-card-title>
+                <mat-card-content style="height: 300px;font-size: 20px;" ><br><br><br><br>{{f.date | date}} <br><br>BY<br><br> <span *ngFor="let t of formateurs" ><ng-container *ngIf="t.id==f.formateur" >{{t.name}} {{t.surName}}</ng-container></span><br><br>{{f.duration}} JOURS</mat-card-content>
+                <mat-card-footer style="font-size:20px;height: 50px;" ><button mat-raised-button color="warn" (click)="addtocart(f)" >ADD TO CART</button></mat-card-footer>
+            </mat-card> 
+        </div>
+        <br>
+    </div>
+    </div>
+    </div>
+</div>
+<br>

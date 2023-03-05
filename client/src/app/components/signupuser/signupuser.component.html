@@ -1,0 +1,20 @@
+
+<div class="login-page">
+    <div class="form">
+        <h2 style="color: #2f3d4a;">User Sign Up Page</h2>
+        <br>
+      <form [formGroup]="signForm" class="login-form" >
+        <input type="text" formControlName="fullname" placeholder="fullname"/>
+        <br><br>
+        <input type="number" formControlName="age" placeholder="age" min="0"/>
+        <br><br>
+        <input type="email" formControlName="mail" placeholder="email"/>
+        <br><br>
+        <input type="password" formControlName="password" placeholder="password"/>
+        <br><br>
+        
+        <button  (click)="signup()">Sign Up</button>
+        <br><br>
+      </form>
+    </div>
+</div>

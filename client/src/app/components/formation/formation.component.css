@@ -1,0 +1,55 @@
+body{color:white;font-family: monospace;height: auto;}
+
+table {
+    width: 100%;
+    
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 13%;
+    
+    
+  }
+
+
+
+button:hover{background: #2f3d4a;color:white}
+
+.an{color:white}
+  
+.example-container {
+    width: 500px;
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
+
+  .c2{font-size:20px;padding:30px;font-family: monospace;font-weight: 500;border-radius: 10px;transition: .4s;}
+
+
+.c2:hover{background-color:white;transition: 0.4s;color:white}
+
+.actif{color:white}
+/*#f4511e*/
+body{animation: trans .5s;}
+
+@keyframes trans 
+{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
