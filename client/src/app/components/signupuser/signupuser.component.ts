@@ -21,7 +21,7 @@ export class SignupuserComponent implements OnInit {
       age:this.signForm.value.age,
       mail:this.signForm.value.mail,
       password:this.signForm.value.password,
-      }).then((response)=>{});
+      }).then(()=>{});
       alert("Sign Up Success");
         this.signForm.reset(); 
         this.router.navigate(['login']);
@@ -36,11 +36,44 @@ export class SignupuserComponent implements OnInit {
   {
     this.signForm=this.fb.nonNullable.group({
       fullname:['',Validators.required],
-      age:['',Validators.required],
-      mail:['',Validators.required],
-      password:['',Validators.required]   
-    });
-    
+      age:['',[Validators.required,Validators.pattern("[1-9][0-9]")]],
+      mail:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+      password:['',[Validators.required,Validators.pattern("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}")]]   
+    }); 
   }
 
+  get fullname()
+  {
+    return this.signForm.get('fullname');
+  }
+
+  get age()
+  {
+    return this.signForm.get('age');
+  }
+
+  get mail()
+  {
+    return this.signForm.get('mail');
+  }
+
+  get password()
+  {
+    return this.signForm.get('password');
+  }
+  isValidPattern(){
+    return this.signForm.get('mail')?.errors?.['pattern']
+    && this.signForm.controls['mail'].touched;
+    }
+  isValidLenth()
+  {
+    return this.signForm.get('age')?.errors?.['pattern'] 
+    && this.signForm.controls['age'].touched;
+  }
+
+  isValidPass()
+  {
+    return this.signForm.get('password')?.errors?.['pattern']
+    && this.signForm.controls['password'].touched;
+  }
 }

@@ -5,12 +5,14 @@
         <br>
       <form [formGroup]="loginForm" class="login-form" >
         <input type="email" formControlName="mail" placeholder="email"/>
+        <div *ngIf="isValidPattern()" class="alert alert-danger">Invalid Mail Format<br><br></div>
+        <div *ngIf="mail?.errors?.['required'] && mail?.dirty" class="alert alert-danger" >Email Required<br><br></div>
         <br><br>
         <input type="password" formControlName="password" placeholder="password"/>
+        <div *ngIf="password && password.invalid && password.touched" class="alert alert-danger">Password Required<br><br></div>
         <br><br>
         <button  (click)="login()">login</button>
         <br><br>
-        <p class="message">Forgot Password? <a routerLink="../change">Change it</a></p>
       </form>
     </div>
 </div>

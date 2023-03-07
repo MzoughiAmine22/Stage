@@ -4,6 +4,7 @@ import { AboutComponent } from './components/about/about.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ChangePassComponent } from './components/change-pass/change-pass.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ErrorComponent } from './components/error/error.component';
 import { FormateurComponent } from './components/formateur/formateur.component';
@@ -18,12 +19,13 @@ import { UserGuard } from './services/user.guard';
 
 const routes: Routes = [
   {path:'adminLog',component:LoginAdminComponent},
-  {path:'adminPasschange',component:ChangePassComponent},
   {path:'cart',component:CartComponent},
+    {path:'cart/checkout',component:CheckoutComponent,canActivate:[UserGuard]},
   {path:'admin',component:AdminComponent,canActivate:[RoleGuard],children:[
     {path:'dash',component:DashboardComponent},
     {path:'formlist',component:FormateurComponent},
     {path:'forms',component:FormationComponent},
+    {path:'adminPasschange',component:ChangePassComponent}
   ]},
     {path:'landing',component:UserComponent},
     {path:'login',component:LoginuserComponent},

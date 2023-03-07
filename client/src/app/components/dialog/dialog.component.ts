@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import {  FormBuilder, FormGroup } from '@angular/forms';
+import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import axios from 'axios';
 import { Formateur } from 'src/app/classes/formateur';
@@ -62,10 +62,10 @@ export class DialogComponent implements OnInit {
   }
   ngOnInit(): void {
     this.formationForm=this.fb.nonNullable.group({
-      name:[],
-      date:[],
-      duration:[],
-      formateur:[], 
+      name:['',Validators.required],
+      date:['',Validators.required],
+      duration:['',Validators.required],
+      formateur:['',Validators.required], 
     });
     this.getFormateur();
 

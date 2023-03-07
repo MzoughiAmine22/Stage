@@ -47,10 +47,23 @@ export class LoginAdminComponent implements OnInit {
   ngOnInit(): void 
   {
     this.loginForm=this.fb.nonNullable.group({
-      mail:['',Validators.required],
+      mail:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       password:['',Validators.required]   
     });
-    
   }
+
+  get mail()
+  {
+    return this.loginForm.get('mail');
+  }
+
+  get password()
+  {
+    return this.loginForm.get('password');
+  }
+  isValidPattern(){
+    return this.loginForm.get('mail')?.errors?.['pattern']
+    && this.loginForm.controls['mail'].touched;
+    }
 
 }

@@ -42,6 +42,7 @@ import { DialogCComponent } from './components/dialog-c/dialog-c.component';
 import { DialogTComponent } from './components/dialog-t/dialog-t.component';
 import { FilterPipe } from './filter.pipe';
 import { UserInterfaceComponent } from './components/user-interface/user-interface.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +67,7 @@ import { UserInterfaceComponent } from './components/user-interface/user-interfa
     DialogTComponent,
     FilterPipe,
     UserInterfaceComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,

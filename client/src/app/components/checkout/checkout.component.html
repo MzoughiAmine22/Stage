@@ -1,0 +1,127 @@
+    <section class="h-100 h-custom" style="background-color: #eee;height:auto">
+        <div class="container-fluid py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+              <div class="card">
+                <div class="card-body p-4">
+                  <div class="row">
+                    <div class="col-lg-7">
+                      <h5 class="mb-3">
+                        <a routerLink="/landing" class="text-body"><i class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a>
+                      </h5>
+                      <hr />
+                      <div class="d-flex justify-content-between align-items-center mb-4">
+                      </div>
+                    </div>
+                      <div class="card bg-secondary text-white rounded-3">
+                        <div class="card-body">
+                          <div
+                            class="d-flex justify-content-between align-items-center mb-4"
+                          >
+                            <h5 class="mb-0">Card details</h5>
+                            <img
+                              src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                              class="img-fluid rounded-3"
+                              style="width: 45px"
+                              alt="Avatar"
+                            />
+                          </div>
+      
+                          <p class="small mb-2">Card type</p>
+                          <a type="submit" class="text-white"
+                            ><i class="fab fa-cc-mastercard fa-2x me-2"></i
+                          ></a>
+                          <a type="submit" class="text-white"
+                            ><i class="fab fa-cc-visa fa-2x me-2"></i
+                          ></a>
+                          <a type="submit" class="text-white"
+                            ><i class="fab fa-cc-amex fa-2x me-2"></i
+                          ></a>
+                          <a type="submit" class="text-white"
+                            ><i class="fab fa-cc-paypal fa-2x"></i
+                          ></a>
+      
+                          <form class="mt-4" [formGroup]="form">
+                            <div class="form-outline form-white mb-4">
+                                <label class="form-label" for="typeName">Cardholder's Name</label>
+                              <input
+                                type="text"
+                                id="typeName"
+                                class="form-control form-control-lg"
+                                size="17"
+                                placeholder="Cardholder's Name"
+                                formControlName="cardHolderName"/>
+                            </div>
+                            <div *ngIf="isValidName()" class="alert alert-danger">Invalid Expiration Date<br><br></div>
+                            <div *ngIf="cardHolderName?.errors?.['required'] && cardHolderName?.dirty" class="alert alert-danger" >Card Holder Name Required<br><br></div>
+                            <div class="form-outline form-white mb-4">
+                                <label class="form-label" for="typeText">Card Number</label>
+                              <input
+                                type="text"
+                                id="typeText"
+                                class="form-control form-control-lg"
+                                size="17"
+                                placeholder="1234 5678 9012 3457"
+                                minlength="16"
+                                maxlength="16"
+                                formControlName="cardNumber"/>
+                              
+                            </div>
+                            <div *ngIf="isValidCardNumber()" class="alert alert-danger">Invalid Card Number<br><br></div>
+                            <div *ngIf="cardName?.errors?.['required'] && cardName?.dirty" class="alert alert-danger" >Card Number Required<br><br></div>
+                            <div class="row mb-4">
+                              <div class="col-md-6">
+                                <div class="form-outline form-white">
+                                    <label class="form-label" for="typeExp">Expiration</label>
+                                  <input
+                                    type="text"
+                                    id="typeExp"
+                                    class="form-control form-control-lg"
+                                    placeholder="MM/YYYY"
+                                    size="7"
+                                    id="exp"
+                                    minlength="7"
+                                    maxlength="7"
+                                    formControlName="expiration"
+                                  />
+                                </div>
+                                <div *ngIf="isValidExp()" class="alert alert-danger">Invalid Expiration Date<br><br></div>
+                                <div *ngIf="expiration?.errors?.['required'] && expiration?.dirty" class="alert alert-danger" >Date Required<br><br></div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-outline form-white">
+                                    <label class="form-label" for="typeText">Cvv</label>
+                                  <input
+                                    type="password"
+                                    id="typeText"
+                                    class="form-control form-control-lg"
+                                    placeholder="&#9679;&#9679;&#9679;"
+                                    size="1"
+                                    minlength="3"
+                                    maxlength="3"
+                                    formControlName="cvv"
+                                  />
+                                </div>
+                                <div *ngIf="isValidCvv()" class="alert alert-danger">Invalid CVV Code<br><br></div>
+                                <div *ngIf="cvv?.errors?.['required'] && cvv?.dirty" class="alert alert-danger" >CVV Required<br><br></div>
+                              </div>
+                            </div>
+                            <hr class="my-4" />
+                          <button [disabled]="form.invalid" (click)="checkout()" type="button" class="btn btn-info btn-block btn-lg">
+                            <div class="d-flex justify-content-between">
+                              <span>Checkout
+                                <i class="fas fa-long-arrow-alt-right ms-2"></i
+                              ></span>
+                            </div>
+                          </button>
+                          </form>
+      
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>

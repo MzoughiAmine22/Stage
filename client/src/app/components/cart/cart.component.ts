@@ -40,14 +40,15 @@ export class CartComponent implements OnInit {
   {
     if(localStorage.getItem('userType')=='user')
     {
-      const dialogRef=this.dialog.open(DialogTComponent,{width:"400px",height:"auto"});
+      /*const dialogRef=this.dialog.open(DialogTComponent,{width:"400px",height:"auto"});
       dialogRef.afterClosed().subscribe(result=>{
         if(result)
         {
-          this.router.navigate(['landing']);
+          this.router.navigate(['cart/checkout']);
         }
       })
-      this.emptycart();
+      this.emptycart();*/
+      this.router.navigate(['cart/checkout']);
     }
     else
     {
@@ -59,7 +60,7 @@ export class CartComponent implements OnInit {
       }
       else
       {
-        this.router.navigate(['cart']);
+        this.router.navigate(['/landing']);
       }
     })
       }  }

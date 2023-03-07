@@ -96,3 +96,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
 }
+
+.alert-danger{background: #2f3d4a;color:white;height: 50px;}
