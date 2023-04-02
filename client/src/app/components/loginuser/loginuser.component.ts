@@ -60,6 +60,6 @@ export class LoginuserComponent implements OnInit {
     return this.loginForm.get('mail')?.errors?.['pattern']
     && this.loginForm.controls['mail'].touched;
     }
-
+  
 
 }

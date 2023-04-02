@@ -15,7 +15,7 @@ export class DialogComponent implements OnInit {
   titleName:string='ADD'
   formateur!:Formateur[];
   formation!:Formation;
-  ddd!:Formateur;
+  
   constructor(private fb:FormBuilder,private dialogRef: MatDialogRef<DialogComponent>,@Inject(MAT_DIALOG_DATA) private editData :any) { }
   
 
